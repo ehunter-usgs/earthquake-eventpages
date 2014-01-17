@@ -1,7 +1,10 @@
 
 .origin-detail {
 	width: 100%;
-	max-width:480px;
+
+	tr {
+		padding: 10px 15px;
+	}
 
 	th, td {
 		text-align: left;
@@ -24,6 +27,15 @@
 
 	> .downloads {
 		margin:2em 0;
+	}
+
+}
+
+
+@media screen and (min-width:768px) {
+
+	.origin-detail {
+		max-width:594px;
 	}
 
 }

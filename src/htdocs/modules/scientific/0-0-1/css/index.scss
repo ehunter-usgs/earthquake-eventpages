@@ -4,18 +4,23 @@
 // TODO: move this to a different style sheet
 table.tabular {
 	background-color:#fefefe;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	border-collapse: collapse;
 	color:#333;
-
-	th {
-		background-color:#eee;
-	}
+	width: 100%;
 
 	th, td {
-		padding:5px;
-		border-right: 1px solid #ddd;
-		border-bottom:1px solid #ddd;
+		padding:10px 15px;
+		border-right: 1px solid #ccc;
+		border-bottom:1px solid #ccc;
+	}
+
+	th {
+		background-color:#ededed;
+	}
+
+	td {
+		color:#666;
 	}
 }
 
