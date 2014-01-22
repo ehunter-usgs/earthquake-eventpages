@@ -47,10 +47,9 @@
 
 	canvas {
 		display:block;
-		margin: 0 auto;
+		margin: 20px auto;
 	}
 }
-
 
 @media screen and (min-width:768px) {
 
@@ -67,6 +66,10 @@
 		.principal-axes-table,
 		.nodal-plane-table {
 			max-width:480px;
+		}
+
+		canvas {
+			margin: 0 auto;
 		}
 	}
 
