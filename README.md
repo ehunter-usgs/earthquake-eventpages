@@ -1,6 +1,8 @@
 earthquake-eventpages
 ==============
 
+This is a test.
+
 Web application for displaying earthquake event pages.
 
 Getting Started
