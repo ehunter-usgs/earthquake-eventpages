@@ -30,7 +30,7 @@ var FiniteFaultPinView = function (options) {
     try {
       code = _this.model.get('properties').eventsourcecode;
       img = _this.model.getContent('web1/' + code + '_slip2.png');
-      markup = '<h3>Cross-section of slip distribution</h3>' +
+      markup = '<span>Cross-section of slip distribution</span>' +
           '<img src="' + img.get('url') + '"' +
           ' class="finite-fault-cross-section" ' +
           ' alt="Cross-section of slip distribution"/>';
