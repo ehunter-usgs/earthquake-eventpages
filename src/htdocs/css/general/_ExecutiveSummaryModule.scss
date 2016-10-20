@@ -45,3 +45,10 @@
     max-width: 25%;
   }
 }
+
+@media screen and (min-width: 1400px) {
+  li.executive-summary-pin {
+    flex-basis: 20%;
+    max-width: 20%;
+  }
+}
