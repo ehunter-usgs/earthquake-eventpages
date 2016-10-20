@@ -72,11 +72,13 @@ var DYFIFormPinView = function (options) {
     }
 
     _this.content.innerHTML =
-      '<div class="dyfi-responses-badge" title="Number of DYFI Responses">' +
-        markup.join('') +
-      '</div>' +
-      '<div class="dyfi-responses-abbr">' +
-        '<abbr title="' + numResponses + ' DYFI Responses">Responses</abbr>' +
+      '<div class="pin-badge">' +
+        '<div class="dyfi-responses-badge" title="Number of DYFI Responses">' +
+          markup.join('') +
+        '</div>' +
+        '<div class="dyfi-responses-abbr">' +
+          '<abbr title="' + numResponses + ' DYFI Responses">Responses</abbr>' +
+        '</div>' +
       '</div>' +
       '<small class="disclaimer">' +
         'Contribute to citizen science. Please <a href="#tellus">tell us</a> ' +

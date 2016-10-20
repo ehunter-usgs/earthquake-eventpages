@@ -1,5 +1,6 @@
 .pin-view {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  border-radius: 2px;
   cursor: pointer;
   height: 100%;
   margin: 0;
@@ -14,7 +15,7 @@
 .pin-content,
 .pin-footer {
   overflow: hidden;
-  padding: 0.75em;
+  padding: 1em;
 }
 
 .pin-header,
@@ -39,7 +40,7 @@
   flex-grow: 1;
   margin: 0.5em 0;
   max-height: 100%;
-  padding: 0 0.75em;
+  padding: 0 1em;
 
   > .leaflet-container {
     cursor: pointer;
@@ -65,6 +66,6 @@
 
 .pin-badge {
   display: block;
-  margin: 1em auto;
+  margin: 0 auto 1em;
   width: 50%;
 }
