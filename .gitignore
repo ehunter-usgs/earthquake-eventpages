@@ -1,6 +1,7 @@
 .DS_Store
 .build
 .sass-cache
+coverage
 dist
 node_modules
 *.sublime-workspace

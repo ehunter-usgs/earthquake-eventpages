@@ -16,3 +16,6 @@ install:
   - php src/lib/pre-install.php --non-interactive
 script:
   - npm test
+  - npm run coverage
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

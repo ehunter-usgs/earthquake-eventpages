@@ -3,6 +3,8 @@ earthquake-eventpages
 
 Web application for displaying earthquake event pages.
 
+[![codecov](https://codecov.io/gh/usgs/earthquake-eventpages/branch/master/graph/badge.svg)](https://codecov.io/gh/usgs/earthquake-eventpages)
+
 Getting Started
 ---------------
 
