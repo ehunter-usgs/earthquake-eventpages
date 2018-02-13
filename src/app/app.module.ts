@@ -18,7 +18,6 @@ import { FormatterService } from './formatter.service';
 
 // TODO, move into separate project?
 import { HazdevTemplateModule } from 'earthquake-geoserve-ui';
-import { MediaMatcher } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
