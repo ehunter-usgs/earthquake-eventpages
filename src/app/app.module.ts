@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,17 +16,22 @@ import { ContributorService } from './contributor.service';
 import { EventService } from './event.service';
 import { FormatterService } from './formatter.service';
 
+// TODO, move into separate project?
+import { HazdevTemplateModule } from 'earthquake-geoserve-ui';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
 
     EventPageModule,
     UnknownEventPageModule,
+    HazdevTemplateModule,
 
     ExecutiveModule,
     RegionInfoModule,
