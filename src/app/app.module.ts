@@ -17,6 +17,7 @@ import { ContributorService } from './contributor.service';
 import { EventService } from './event.service';
 import { FormatterService } from './formatter.service';
 
+import { HazdevTemplateModule } from 'hazdev-template';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormatterService } from './formatter.service';
 
     EventPageModule,
     UnknownEventPageModule,
+    HazdevTemplateModule,
 
     ExecutiveModule,
     RegionInfoModule,
