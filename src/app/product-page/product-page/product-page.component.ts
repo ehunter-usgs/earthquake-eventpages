@@ -18,6 +18,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   // query params can override default product source/code to be shown
   private queryParamMapSubscription: Subscription;
+  public count: number;
 
   constructor (
     public contributorService: ContributorService,
@@ -26,6 +27,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit () {
+    this.count = 0;
     this.queryParamMapSubscription = this.route.queryParamMap.subscribe((paramMap: ParamMap) => {
       this.onQueryParamMapChange(paramMap);
     });
@@ -41,4 +43,9 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.eventService.getProduct(this.productType, source, code);
   }
 
+  loggingRenders (type: string) {
+    this.count++;
+    console.log('render (' + this.count + ') - ' + type);
+    return false;
+  }
 }

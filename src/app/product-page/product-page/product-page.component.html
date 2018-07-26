@@ -13,6 +13,9 @@
         <ng-content select="[header]"></ng-content>
       </product-page-header>
 
+      <!-- Checking to see how many times the template is evaluated -->
+      <ng-container *ngIf="loggingRenders(productType)"></ng-container>
+
       <!-- custom module content -->
       <ng-content></ng-content>
 
