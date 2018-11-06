@@ -9,35 +9,42 @@ import { Event } from './event';
  *      The scenario event data
  */
 function transformEvent(data: any) {
-  const newData = data;
-  let properties = null;
+  let products = {};
 
-  if (!newData) {
+  if (!data) {
     return null;
   }
   try {
     // set the products object for iteration
-    properties = newData.properties.products;
-    Object.keys(properties).forEach(key => {
+    const scenarioProducts = data.properties.products;
+    Object.keys(scenarioProducts).forEach(key => {
       // look for -scenario in property name
       const index = key.indexOf('-scenario');
       if (index !== -1) {
         // strip out the -scenario from property name
-        const propValue = key.substr(0, index);
-        properties[propValue] = properties[key];
-        delete properties[key];
+        const type = key.substr(0, index);
+        const productVersions = scenarioProducts[key];
 
-        if (properties[propValue][0].type) {
-          properties[propValue][0].type = propValue;
+        // update product.type on each version
+        for (let i = 0, len = productVersions.length; i < len; i++) {
+          productVersions[i].type = type;
         }
+
+        // replace products object with non-scenario types
+        products[type] = productVersions;
       } else {
-        return;
+        // not a "-scenario" type product, copy anyway
+        products[key] = scenarioProducts[key];
       }
     });
-    return newData;
   } catch (e) {
-    return null;
+    // error fallback to original products
+    products = data.properties.products;
   }
+
+  // Update products with parsed non-scenario names
+  data.properties.products = products;
+  return data;
 }
 
 /**
@@ -46,7 +53,6 @@ function transformEvent(data: any) {
  */
 export class ScenarioEvent extends Event {
   constructor(data: any) {
-    const newData = transformEvent(data);
-    super(newData);
+    super(transformEvent(data));
   }
 }

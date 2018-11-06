@@ -20,6 +20,12 @@ describe('ScenarioEvent', () => {
             indexid: '165981',
             indexTime: 1494946824822,
             type: 'origin-scenario'
+          },
+          {
+            id: 'urn:usgs-product:us:origin-scenario:bssc2014632_m7p03_se2',
+            indexid: '165982',
+            indexTime: 1494946824823,
+            type: 'origin-scenario'
           }
         ],
         'shakemap-scenario': [
@@ -86,10 +92,9 @@ describe('ScenarioEvent', () => {
     expect(event.properties.products.testActual[0].type).toEqual('test-actual');
   });
 
-  it('handles no type inside each product type', () => {
+  it('changes the product.type on all versions of a scenario product', () => {
     const event = new ScenarioEvent(TEST_EVENT);
-    expect(event.properties.products.actual[0].type).toBeUndefined();
-    expect(event.properties.products.actual).toBeTruthy();
-    expect(event.properties.products.actual[0].indexid).toEqual('3882993');
+    expect(event.properties.products.origin[0].type).toEqual('origin');
+    expect(event.properties.products.origin[1].type).toEqual('origin');
   });
 });

@@ -11,6 +11,7 @@ import { catchError } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { Event } from '../event';
+import { ScenarioEvent } from '../scenario-event';
 
 /**
  * Event service, gets event, updates products, makes http calls dealing with
@@ -18,7 +19,7 @@ import { Event } from '../event';
  */
 @Injectable()
 export class EventService {
-  event$ = new BehaviorSubject<Event>(new Event(null));
+  event$ = new BehaviorSubject<any>(new Event(null));
   product$ = new BehaviorSubject<any>(null);
   productCode: string;
   productSource: string;
@@ -33,6 +34,7 @@ export class EventService {
    *     the event id
    */
   getEvent(eventid: string): void {
+    let ev;
     const url = this.getEventDetailsUrl(eventid);
 
     // clear existing information if requested event id is different
@@ -55,7 +57,14 @@ export class EventService {
           this.getUnknownEvent(eventid);
           return;
         }
-        this.setEvent(new Event(response));
+
+        if (environment.scenario) {
+          ev = new ScenarioEvent(response);
+        } else {
+          ev = new Event(response);
+        }
+
+        this.setEvent(ev);
       });
   }
 
