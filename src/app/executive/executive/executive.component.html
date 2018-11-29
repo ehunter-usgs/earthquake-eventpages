@@ -42,6 +42,11 @@
       <executive-origin-pin [product]="origin"> </executive-origin-pin>
     </li>
 
+    <!-- TODO REMOVE -->
+    <li *ngIf="alert && alert.status">
+      <executive-shake-alert-pin [product]="alert"></executive-shake-alert-pin>
+    </li>
+
     <li
       *ngIf="
         (event | getProduct: 'moment-tensor');

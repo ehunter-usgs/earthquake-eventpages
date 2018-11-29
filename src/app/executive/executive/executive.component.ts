@@ -13,8 +13,10 @@ import * as shakeAlert from './shake-alert.json';
   templateUrl: './executive.component.html'
 })
 export class ExecutiveComponent {
+  alert = shakeAlert;
+
   constructor(public eventService: EventService) {
-    console.log(shakeAlert);
+    console.log(this.alert);
   }
 
   /**

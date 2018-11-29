@@ -1,0 +1,22 @@
+<basic-pin [link]="link" [product]="product" [title]="title">
+  <ng-container *ngIf="product?.properties as properties; else: noProperties">
+    <ng-container *ngIf="product && product.status === 'PENDING'">
+      <div *ngIf="properties.confidence">
+        There is a {{ properties.confidence * 100 }}% chance this event exists
+      </div>
+    </ng-container>
+    <ng-container *ngIf="product && product.status === 'CONFIRMED'">
+      <div *ngIf="properties.confidence">
+        There is a {{ properties.confidence * 100 }}% chance this event exists
+      </div>
+    </ng-container>
+    <ng-container *ngIf="product && product.status === 'MISSED'">
+      <div *ngIf="properties.confidence">
+        There is a {{ properties.confidence * 100 }}% chance this event exists
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-template #noProperties>
+    <p class="alert error">ShakeAlert properties not specified.</p>
+  </ng-template>
+</basic-pin>

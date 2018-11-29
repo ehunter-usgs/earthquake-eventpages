@@ -28,7 +28,7 @@
     "num-stations-100km": 1062,
     "created": "2018-11-01T22:00:00Z",
 
-    "confidence": "0.9091",
+    "confidence": 0.9091,
     "num-stations": 0,
     "alert-latency": 12,
     "confirmed-time": 412
