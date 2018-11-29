@@ -1,0 +1,36 @@
+{
+  "indexid": "127153291",
+  "indexTime": 1521102144034,
+  "id": "urn:usgs-product:us:shake-alert:us2000cmy3:1521102133040",
+  "type": "shake-alert",
+  "code": "us2000cmy3",
+  "source": "us",
+  "updateTime": 1521102133040,
+  "status": "PENDING",
+  "properties": {
+    "eventsource": "us",
+    "eventsourcecode": "2000cmy3",
+    "eventtime": "2018-01-23T09:31:40.890Z",
+    "eventtime-error": "1.57",
+    "horizontal-error": "6",
+    "latitude": "56.0039",
+    "latitude-error": "0.0603",
+    "longitude": "-149.1658",
+    "longitude-error": "0.0869",
+    "magnitude": "7.9",
+    "magnitude-error": "0.034",
+    "magnitude-num-stations-used": "81",
+    "magnitude-source": "us",
+    "magnitude-type": "mww",
+    "title": "M 7.9 - 280km SE of Kodiak, Alaska",
+
+    "num-stations-10km": 54,
+    "num-stations-100km": 1062,
+    "created": "2018-11-01T22:00:00Z",
+
+    "confidence": "0.9091",
+    "num-stations": 0,
+    "alert-latency": 12,
+    "confirmed-time": 412
+  }
+}

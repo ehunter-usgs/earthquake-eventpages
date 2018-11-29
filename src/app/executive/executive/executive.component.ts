@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import { EventService } from '@core/event.service';
-
+import * as shakeAlert from './shake-alert.json';
 
 /**
  * Executive summary page
@@ -13,7 +13,9 @@ import { EventService } from '@core/event.service';
   templateUrl: './executive.component.html'
 })
 export class ExecutiveComponent {
-  constructor(public eventService: EventService) {}
+  constructor(public eventService: EventService) {
+    console.log(shakeAlert);
+  }
 
   /**
    * Checks for changes to data by index
@@ -23,8 +25,7 @@ export class ExecutiveComponent {
    * @param item
    *    general text product
    */
-  trackByIndex (index, item) {
+  trackByIndex(index, item) {
     return index;
   }
-
 }
